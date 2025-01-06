@@ -4,6 +4,7 @@ use anyhow::Result;
 use axum::{extract::State, http::StatusCode, routing::get, Router};
 use tokio::net::TcpListener;
 
+#[allow(unused)]
 use sqlx::{postgres::PgConnectOptions, Database, PgPool};
 
 struct DatabaseConfig {
@@ -25,23 +26,29 @@ impl From<DatabaseConfig> for PgConnectOptions {
     }
 }
 
+#[allow(unused)]
 struct SingleTuple(i32);
 
+#[allow(unused)]
 struct MultipleTuple(i32, String);
 
+#[allow(unused)]
 struct Struct {
     number: i32,
     identifier: String,
 }
 
+#[allow(unused)]
 fn print_single_tuple(SingleTuple(number): SingleTuple) {
     println!("SingleTuple: {}", number);
 }
 
+#[allow(unused)]
 fn print_multiple_tuple(MultipleTuple(number, identifier): MultipleTuple) {
     println!("MultipleTuple: {} {}", number, identifier);
 }
 
+#[allow(unused)]
 fn print_struct(Struct { number, identifier }: Struct) {
     println!("Struct: {} {}", number, identifier);
 }
