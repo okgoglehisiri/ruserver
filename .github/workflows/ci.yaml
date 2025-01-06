@@ -1,7 +1,7 @@
 name: CI for book
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
     paths-ignore:
       - "README.md"
