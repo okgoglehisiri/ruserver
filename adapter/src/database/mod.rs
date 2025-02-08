@@ -1,6 +1,7 @@
 use shared::config::DatabaseConfig;
 use sqlx::{postgres::PgConnectOptions, PgPool};
 
+// translate from `DatabaseConfig` to `PgConnectOptions`
 fn make_pg_connect_options(cfg: &DatabaseConfig) -> PgConnectOptions {
     PgConnectOptions::new()
         .host(&cfg.host)
@@ -10,6 +11,7 @@ fn make_pg_connect_options(cfg: &DatabaseConfig) -> PgConnectOptions {
         .database(&cfg.database)
 }
 
+// rapping `sqlx::PgPool`
 #[derive(Clone)]
 pub struct ConnectionPool(PgPool);
 

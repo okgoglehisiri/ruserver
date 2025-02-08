@@ -4,6 +4,7 @@ use kernel::repository::health::HealthCheckRepository;
 
 use crate::database::ConnectionPool;
 
+// auto generate constructor
 #[derive(new)]
 pub struct HealthCheckRepositoryImpl {
     db: ConnectionPool,
